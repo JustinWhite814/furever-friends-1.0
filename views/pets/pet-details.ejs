@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: `${pet.name} | Furever Friends`}) %>
+    <link rel="stylesheet" href="/styles/pet-details.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div class="card">
+        <img src="<%= pet.photo %>">
+
+        <h2 class="pet-name"><%= pet.name %></h2>
+
+        <section>
+            <p><strong>Age:</strong> <%= pet.age %></p>
+            <p><strong>Breed:</strong> <%= pet.breed %></p>
+            <p><strong>Species:</strong> <%= pet.species %></p>
+            <p><strong>Location:</strong> <%= `${pet.city}, ${pet.state}` %></p>
+            <p><strong>Description:</strong> <%= pet.description %></p>
+        </section>
+
+        <section class="actions">
+            <a href="/pets/<%= pet._id %>/edit"><button class="btn">Edit</button></a>
+            <a href="/applications/new/<%= pet._id %>"><button class="btn">Adopt</button></a>
+            <form method="POST" action="/pets/<%= pet._id %>?_method=DELETE">
+                <input class="btn" type="submit" value="Delete" />
+            </form>
+        </section>
+    </div>
+
+    <% if (pet.applications.length > 0) { %>
+    <div class="applications" open>
+        <h1>Adoption Applications</h1>
+        <hr>
+        <ul>
+            <% for (let app of pet.applications) { %>
+            <li>
+                <h2><%= app.applicantName %></h2>
+                <p> <%= app.reasonForAdoption %></p>
+                <a href="/applications/<%= app._id %>">Read More</a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <% } %>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
