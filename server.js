@@ -95,6 +95,7 @@ app.use('/applications', adoptionApplicationCtrl)
 
 
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
+// test
 app.get('*', function (req, res) {
     res.render('404')
 });
