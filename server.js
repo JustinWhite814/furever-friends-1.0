@@ -46,7 +46,7 @@ app.set('views', path.join(__dirname, 'views'));
 // into an object that can be accessed in the request parameter as a property called body (req.body).
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
-app.use(connectLiveReload());
+// app.use(connectLiveReload());
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
 
