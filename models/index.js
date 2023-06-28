@@ -1,7 +1,6 @@
 // Require the Mongoose package & your environment configuration
 require('dotenv').config()
 const mongoose = require('mongoose');
-const mongodbUri = process.env.MONGODBURI;
 
 // Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGODBURI);
