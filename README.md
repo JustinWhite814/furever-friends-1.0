@@ -2,8 +2,8 @@
 <img src="https://i.imgur.com/mkewRj6.png" width="100%"/>
 
 
-## Background
-This is a project that comes near to my heart. Throughout my time at General Assembly we worked on quite a few projects. This is a MEN stack Application. It uses relationships.I built RESTful routes to perform some CRUD operations on a Mongo sub-document!
+## Description
+> This is a project that comes near to my heart. Throughout my time at General Assembly we worked on quite a few projects. This is a MEN stack Application. It uses relationships.I built RESTful routes to perform some CRUD operations on a Mongo sub-document!
 
 
 ## Set Up
